@@ -23,11 +23,9 @@ Pizza.prototype.calcCost = function () {
     if (this.size === "1") {
         this.price += 0
     } else if (this.size === "2") {
-        this.price += 2
+        this.price += 200
     } else if (this.size === "3") {
-        this.price += 4
-    } else if (this.size === "4") {
-        this.price += 5
+        this.price += 400
     }
     return this.price;
 }
@@ -53,13 +51,7 @@ var nameGen = function (size) {
         return "Extra-large"
     }
 }
-var checkRushed = function (value) {
-    if (value === "1") {
-        console.log("something")
-    } else if (value === "2") {
-        order.grandTotal += 5;
-    }
-}
+
 
 $(document).ready(function () {
     $("form#pizza1").submit(function (event) {
