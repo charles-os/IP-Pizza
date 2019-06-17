@@ -1,0 +1,26 @@
+.sec-1{
+    background-image: url(../Assets/background1/p-tz2.jpg);
+    background-repeat: no-repeat;
+    background: cover;
+    height: 700px;
+}
+#h1-h {
+    border: 3px solid aquamarine;
+    background-color: white;
+    text-align: center;
+    padding: 15px;
+    opacity: 0.6;
+}
+.c-deck{
+    padding: 10px;
+}
+.title-1{
+    text-align: center;
+    background-color: aquamarine;
+    opacity: 0.6;
+    width: 100%
+}
+.h3-weekly{
+    text-align: center;
+    padding: 40px
+}
