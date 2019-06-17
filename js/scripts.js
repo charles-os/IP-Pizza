@@ -1,25 +1,15 @@
 var counter = 0;
 
 function Pizza(size, name) {
-    this.ingredients = [];
     this.size = size;
     this.price = 600;
     this.name = name;
 }
 
-Pizza.prototype.addTops = function (array) {
-    for (i = 0; i < array.length; i++) {
-        this.ingredients.push(parseInt(array[i]));
-    }
-}
+
 Pizza.prototype.calcCost = function () {
-    for (i = 0; i < this.ingredients.length; i++) {
-        if ((this.ingredients[i] >= 1) && (this.ingredients[i] <= 6)) {
-            this.price += 20;
-        } else if (this.ingredients[i] >= 7 && this.ingredients[i] <= 12) {
-            this.price += 30;
-        }
-    }
+    
+    
     if (this.size === "1") {
         this.price += 0
     } else if (this.size === "2") {
@@ -29,17 +19,6 @@ Pizza.prototype.calcCost = function () {
     }
     return this.price;
 }
-function Order() {
-    this.items = [];
-    this.rush = false;
-    this.grandTotal = 0;
-}
-var order = new Order;
-
-Order.prototype.calcGTotal = function (total) {
-    this.grandTotal += total;
-}
-
 var nameGen = function (size) {
     if (size === "1") {
         return "small"
