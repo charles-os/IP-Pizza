@@ -54,3 +54,9 @@
       background: cover;
       background-repeat: no-repeat;
   }
+  .card-text{
+      color: white;
+      background-color: #202c2d;
+      opacity: 0.8
+      ;
+  }
