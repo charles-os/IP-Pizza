@@ -17,9 +17,13 @@
 }
 .title-1{
     text-align: center;
-    background-color: aquamarine;
+    font-weight: 100px;
     opacity: 0.6;
-    width: 100%
+    width: 100%;
+    font-size: 100px;
+    color: white;
+    text-decoration: overline;
+    margin-top: 50px;
 }
 .h3-weekly{
     text-align: center;
