@@ -3,7 +3,7 @@ var counter = 0;
 function Pizza(size, name) {
     this.ingredients = [];
     this.size = size;
-    this.price = 8;
+    this.price = 600;
     this.name = name;
 }
 
