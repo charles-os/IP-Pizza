@@ -53,10 +53,11 @@
       background-image: url(../Assets/background1/p-tz1.jpg);
       background: cover;
       background-repeat: no-repeat;
+      height: 300px;
   }
   .card-text{
       color: white;
       background-color: #202c2d;
-      opacity: 0.8
-      ;
+      opacity: 0.8;
+      
   }
