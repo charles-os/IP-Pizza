@@ -24,7 +24,7 @@ var nameGen = function (size) {
         return "small"
     } else if (size === "2") {
         return "medium"
-    } else if (size === "3") {
+    } else if (size === "3") {fun
         return "large"
     } 
 }
