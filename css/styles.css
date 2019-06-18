@@ -76,10 +76,36 @@
     text-decoration: underline;
   }
   .framed {
-    border: solid rgb(137, 204, 204) 2px;
+    border: solid rgb(247, 247, 247) 2px;
     border-radius: 6px;
     padding: 25px;
     color: rgb(137, 204, 204);
     margin-top: 50px;
   }
-  re
+  #show-order {
+    display: none;
+  }
+  
+  .orderList {
+    display: none;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  #orders {
+    cursor: pointer;
+    color: rgb(137, 204, 204);
+    list-style-image: url("../img/pizza.png");
+  }
+  
+  #orders:hover {
+    text-decoration: underline;
+  }
+  .foot-r{
+    margin: 30px;
+    padding: 50px;
+    text-align: center;
+    text-decoration: overline;
+  }

@@ -32,130 +32,132 @@
                 <img src="../Assets/logo/logo.jpg" alt="Pizza Planet Logo" id="logo" />
                 <h2 class="title-1">TeeTEA Pizza Platter!</h2>
             </div>
-            <div class="row">
-                <div class="col-xs-12 welcome">
-                    <hr>
-                    <p>Here at TeeTEAPizza Platter we know you will definately come back <span class="faces">every
-                            single</span> order.</p>
-                    <div class="row">
-                        <div class="col-xs-5 pizza1">
-                            <form id="pizza1">
-                                <div class="form-group">
-                                    <label for="time">Select a size</label>
-                                    <select class="form-control" id="size">
-                                        <option value="1">Small </option>
-                                        <option value="2">Medium </option>
-                                        <option value="3">Large </option>
-                                        <option value="4"></option>
-                                    </select>
-                                </div>
-                                <button class="btn-danger btn" type="submit" name="button">Add some toppings!</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="row ">
-            <div class="col-xs-7 col-xs-offset-1">
-                <div class="row topsAdd fat-zframed">
-                    <div class="col-xs-7 col-md-7 ">
-                        <h3 class="heading">Pick your toppings:</h3>
-                        <form action="form_action.asp" class="toppings">
-                            <input type="checkbox" name="topping" value="1" id="cheese">Cheese<br>
-                            <input type="checkbox" name="topping" value="2">Pepperoni<br>
-                            <input type="checkbox" name="topping" value="3">Sausage<br>
-                            <input type="checkbox" name="topping" value="4">Canadian Bacon<br>
-                            <input type="checkbox" name="topping" value="5">BBQ Steak<br>
-                            <input type="checkbox" name="topping" value="6">Periperi<br>
-                        </form>
+    </div>
+    <div class="container">
+        <h2>We are sure you will come back for more pizza.</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="lead">Kindly key in your location:</p>
+                <form id="new-order">
+                    <div class="form-group">
+                        <label for="inputtedName"> Location:</label>
+                        <input id="inputtedName" type=text>
                     </div>
-                    <div class="col-xs-5 col-md-5">
-
-                        <form action="form_action.asp" class="toppings">
-                            <input type="checkbox" name="topping" value="7">Onions<br>
-                            <input type="checkbox" name="topping" value="8">Green Peppers<br>
-                            <input type="checkbox" name="topping" value="9">Mushrooms<br>
-                            <input type="checkbox" name="topping" value="10">Pineapple<br>
-                            <input type="checkbox" name="topping" value="11">Olives<br>
-                            <input type="checkbox" name="topping" value="12">Jalapenos<br>
-                            <br>
-                            <button class="btn-danger btn" type="submit" name="button" id="topSubmit">Submit</button>
-                        </form>
+                    <div class="form-group">
+                        <label for="inputtedSize">Size:</label>
+                        <select id="inputtedSize">
+                            <option value="">Select Size:</option>
+                            <option value="Small">Small - Kshs600</option>
+                            <option value="Medium">Medium - Kshs800</option>
+                            <option value="Large">Large - $Kshs1000</option>
+                        </select>
                     </div>
-                </div>
-                <div class="row fat-zthanks framed">
-                    <div class="col-xs-9 ">
-                        <img src="/Assets/background1/p-tz3.jpg" alt="" class="img-responsive" />
-                        
-                        <p>you need another pizza!</p>
-                        <form id="pizza2">
+                    <div class="new-toppings">
+                        <div class="new-toppings">
                             <div class="form-group">
-                                <label for="time">Select a size</label>
-                                <select class="form-control" id="size2">
-                                    <option value="1">Small </option>
-                                    <option value="2">Medium</option>
-                                    <option value="3">Large </option>
-                                </select>
+                                <label for="inputtedToppings">Toppings:</label>
+                                <p>(<em>50 each</em>)</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping"
+                                                    value="Just Cheese"><strong>Just Cheese</strong>
+                                                (free)</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping" value="Extra Cheese">Extra
+                                                Cheese</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping" value="Extra Sauce">Extra
+                                                Sauce</label>
+                                        </div>
+                                        <div class="checkbox disabled">
+                                            <label><input type="checkbox" name="topping" value="Garlic">Garlic</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping" value="Roasted Peppers">Roasted
+                                                Peppers</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping"
+                                                    value="Pepperoni">Pepperoni</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping" value="Sausage">Sausage</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping" value="Spinach">Spinach</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping"
+                                                    value="Pineapple">Pineapple</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping" value="Canadian Bacon">Canadian
+                                                Bacon</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping" value="Bacon">Bacon</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping" value="Onions">Onions</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="topping"
+                                                    value="Mushrooms">Mushrooms</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <button class="btn-danger btn" type="submit" name="button">Add to order!</button>
-                        </form>
-                        <br>
-                        <h4>Or, continue to next step?</h4>
-                        <br>
-                        <button class="btn-danger btn btn-large" type="button" name="button" id="goToDelivery">
-                            continue</button>
+                        </div>
                     </div>
-                </div>
-                <div class="delivery fat-z framed">
-                    <h3>What is your delivery address?</h3>
-                    <form id="new-address">
-                        <div class="form-group">
-                            <label for="Name">First name</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div>
-                            <div class="new-address">
-                                <div class="form-group">
-                                    <label for="new-street-name">Street</label>
-                                    <input type="text" class="form-control new-street" id="street">
-                                </div>
-                                <div class="form-group">
-                                    <label for="new-city">location</label>
-                                    <input type="text" class="form-control new-city" id="city">
-                                </div>
-
-                                <input type="text" class="form-control" id="zip">
-                            </div>
-
-                        </div>
-                </div>
-                <button type="submit" class="btn btn-danger" id="deliverySubmit">Deliver Destination</button>
+                    <button type="submit" class="btn" btn-lg btn-primary>Pizza Addiction</button>
                 </form>
             </div>
-        </div>
-        <div class="col-xs-3 col-xs-offset-1 fat-z totalBox framed">
-            <h3 class="heading">Order total</h3>
-            <ol id="output">
-            </ol>
-            <div class="row">
-                <div class="col-xs-10 col-xs-offset-1" id="totalDiv">
-                    <p>KSHS<span class="framed" id="totalHere"></span></p>
+            <div class="col-md-6">
+                <h2 class="orderList">Your Order:</h2>
+                <p class="orderList">Click for price, details, and to place your order. <em>Or</em> add another pizza on
+                    the
+                    left, because pizza.</p>
+                <ul id="orders">
+                </ul>
+                <br></br>
+                <div id="show-order">
+                    <h4></h4>
+                    <p>Toppings:</p>
+                    <ul id="toppings">
+                    </ul>
+                    <p>Price: <span class="price"></span></p>
+                    <button id="placeOrder" class="btn btn-primary" type="button" name="button">Place Whole
+                        Order</button>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-6 col-xs-offset-3 goodbye fat-z framed">
-                <h3>Thank you <span id="nameHere"></span>!</h3>
-                <div class="row">
-                    <div class="col-xs-7 col-md-7 addressText">
-                        <h3> print receipt total of: Kshs<span id="finalTotalHere"></span></h3>
-                        <h3>Delivery will be made to this location:</h3>
-                        x
+        <div id="modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title">Sweet !</h2>
                     </div>
+                    <div class="modal-body">
+                        <br></br>
+                        <p class="lead">Thank you for making an order.</p>
+                    </div>
+
                 </div>
             </div>
         </div>
+
+
+    </div>
+    <div class="foot-r">
+        TEETEA PIZZA PLAZA <br>
+        2019
     </div>
     </div>
     <script src="js/jquery-3.4.1.js"></script>

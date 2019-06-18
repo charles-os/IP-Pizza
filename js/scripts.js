@@ -1,91 +1,129 @@
-var counter = 0;
+// var counter = 0;
 
-function Pizza(size, name) {
-    this.size = size;
-    this.price = 600;
-    this.name = name;
-}
+// function Pizza(size, name) {
+//     this.size = size;
+//     this.price = 600;
+//     this.name = name;
+// }
 
 
-Pizza.prototype.calcCost = function () {
+// Pizza.prototype.calcCost = function () {
     
     
-    if (this.size === "1") {
-        this.price += 0
-    } else if (this.size === "2") {
-        this.price += 200
-    } else if (this.size === "3") {
-        this.price += 400
+//     if (this.size === "1") {
+//         this.price += 0
+//     } else if (this.size === "2") {
+//         this.price += 200
+//     } else if (this.size === "3") {
+//         this.price += 400
+//     }
+//     return this.price;
+// }
+// var nameGen = function (size) {
+//     if (size === "1") {
+//         return "small"
+//     } else if (size === "2") {
+//         return "medium"
+//     } else if (size === "3") {fun
+//         return "large"
+//     } 
+// }
+
+function PizzaOrder(quantity, pizzaSize, pizzaName, toppings, toppingsPrice, price) {
+    this.quantity = quantity;
+    this.pizzaSize = pizzaSize;
+    this.pizzaName = pizzaName;
+    this.toppings = toppings;
+    this.toppingsPrice = [];
+    this.price = price;
+  };
+  
+  PizzaOrder.prototype.calculatePrice = function() {
+  
+    var specialToppings = ["Extra Cheese", "Extra Sauce", "Garlic", "Roasted Peppers", "Pepperoni", "Sausage", "Spinach", "Pineapple", "Canadian Bacon", "Bacon", "Onions", "Mushrooms"];
+    var medprice = 700;
+  
+    for (var i = 0; i < this.toppings.length; i++) {
+      for (var j = 0; j < specialToppings.length; j++){
+        if(this.toppings[i] === specialToppings[j]) {
+        this.toppingsPrice.push(50);
+        medprice += 50;
+        }
+      }
     }
-    return this.price;
-}
-var nameGen = function (size) {
-    if (size === "1") {
-        return "small"
-    } else if (size === "2") {
-        return "medium"
-    } else if (size === "3") {fun
-        return "large"
-    } 
-}
-
-
-$(document).ready(function () {
-    $("form#pizza1").submit(function (event) {
-        event.preventDefault();
-        var pizzaSize = $("#size").val();
-        var pizzaName = "A " + nameGen(pizzaSize) + " pizza";
-        var pizza = new Pizza(pizzaSize, pizzaName);
-        order.items.push(pizza);
-        $(".jumbotron").slideToggle();
-        $(".topsAdd").slideToggle();
-    });
-    $("form.toppings").submit(function (event) {
-        event.preventDefault();
-        var toppingsArr = []
-        $("input:checkbox[name=topping]:checked").each(function () {
-            toppingsArr.push($(this).val());
+    if (this.pizzaSize === "Small") {
+      medprice -= 100;
+    }
+    if (this.pizzaSize === "Large") {
+      medprice += 100;
+    }
+    if (this.pizzaSize === "XL") {
+      medprice += 300;
+    }
+    return medprice;
+  };
+  
+  PizzaOrder.prototype.orderSummary = function() {
+    return this.pizzaSize + " " + this.pizzaName;
+  };
+  
+  
+  $(document).ready(function() {
+    $("form#new-order").submit(function(event) {
+      event.preventDefault();
+  
+      var inputtedQuantity = $("input#inputtedQuantity").val();
+      var inputtedSize = $("select#inputtedSize").val();
+      var inputtedName = $("input#inputtedName").val();
+  
+      var inputtedToppings = [];
+        $.each($('input[name="topping"]:checked'), function() {
+          inputtedToppings.push($(this).val());
         });
-        $('input:checkbox').prop('checked', false);
-        order.items[counter].addTops(toppingsArr);
-        var total = order.items[counter].calcCost();
-        order.calcGTotal(total);
-        var node = document.createElement("li");
-        var textnode = document.createTextNode(order.items[counter].name);
-        node.appendChild(textnode);
-        document.getElementById("output").appendChild(node);
-        counter++;
-        $("#totalHere").text(order.grandTotal);
-        $(".topsAdd").slideToggle();
-        $(".thanks").show();
-        $(".totalBox").show();
+  
+      var newPizzaOrder = new PizzaOrder (inputtedQuantity, inputtedSize, inputtedName, inputtedToppings);
+      var price = newPizzaOrder.calculatePrice();
+      var roundedPrice = price.toFixed(2);
+  
+      if (inputtedSize === "" || inputtedName === "" || inputtedToppings === 0) {
+        alert("Please make sure all fields are marked/filled!");
+      }
+      else {
+  
+        $(".orderList").show();
+        $("ul#orders").append("<span class='order'><li>" + newPizzaOrder.orderSummary() + "</li></span>");
+  
+        $("input#inputtedQuantity").val("");
+        $("select#inputtedSize").val("");
+        $('input:checkbox').removeAttr('checked');
+        $("input#inputtedName").val("");
+      };
+  
+      $(".order").last().click(function() {
+        $("#show-order").show();
+        $("#toppings").empty();
+        $("#show-order h4").text(newPizzaOrder.orderSummary());
+        $(".price").text("Kshs" + roundedPrice);
+  
+        for (var i = 0; i < inputtedToppings.length; i++) {
+          $("ul#toppings").append("<li>" + inputtedToppings[i] + "</li>");
+        };
+      });
     });
-    $("form#pizza2").submit(function (event) {
-        event.preventDefault();
-        var pizzaSize = $("#size2").val();
-        var pizzaName = "A " + nameGen(pizzaSize) + " pizza";
-        var pizza = new Pizza(pizzaSize, pizzaName);
-        order.items.push(pizza);
-        $(".thanks").slideToggle();
-        $(".topsAdd").slideToggle();
+    $(document).on('click', '#placeOrder', function() {
+      $("#modal").modal('show');
     });
-    $("#goToDelivery").click(function (event) {
-        $(".thanks").slideToggle();
-        $(".delivery").slideToggle();
-    });
-    $("form#new-address").submit(function (event) {
-        event.preventDefault();
-        $(".delivery").slideToggle();
-        $(".totalBox").slideToggle();
-        $(".goodbye").slideToggle();
-        var orderName = $("input#name").val();
-        var orderStreet = $("input#street").val();
-        var orderCity = $("input#city").val();
-    
-        
-        $("#nameHere").text(orderName);
-     
-   
-        $("#finalTotalHere").text(order.grandTotal);
-    });
-});
+  });
+  
+
+
+
+
+
+
+
+
+
+
+
+
