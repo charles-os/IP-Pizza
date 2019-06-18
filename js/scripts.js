@@ -46,18 +46,18 @@ function PizzaOrder(quantity, pizzaSize, pizzaName, toppings, toppingsPrice, pri
     for (var i = 0; i < this.toppings.length; i++) {
       for (var j = 0; j < specialToppings.length; j++){
         if(this.toppings[i] === specialToppings[j]) {
-        this.toppingsPrice.push(50);
-        medprice += 50;
+        this.toppingsPrice.push(100);
+        medprice += 100;
         }
       }
     }
     if (this.pizzaSize === "Small") {
       medprice -= 100;
     }
-    if (this.pizzaSize === "Large") {
+    if (this.pizzaSize === "medium") {
       medprice += 100;
     }
-    if (this.pizzaSize === "XL") {
+    if (this.pizzaSize === "large") {
       medprice += 300;
     }
     return medprice;
