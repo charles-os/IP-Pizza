@@ -97,7 +97,7 @@
   #orders {
     cursor: pointer;
     color: rgb(137, 204, 204);
-    list-style-image: url("../img/pizza.png");
+    list-style-image: url("../Assets/background1/p-tz4.jpeg");
   }
   
   #orders:hover {
@@ -108,4 +108,8 @@
     padding: 50px;
     text-align: center;
     text-decoration: overline;
+  }
+  .cont-1{
+    border: 
+    rgb(137, 204, 204)
   }
